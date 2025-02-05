@@ -95,9 +95,9 @@ resource "aws_security_group" "main" {
 }
 
 # Template File para o Script de User Data
-# data "template_file" "user_data" {
-#   template = file("./scripts/user_data.sh")
-# }
+data "template_file" "user_data" {
+  template = file("./scripts/user_data.sh")
+}
 
 # Criar a Instância EC2 com o Script de User Data
 resource "aws_instance" "ec2_instance" {
@@ -119,3 +119,4 @@ resource "aws_instance" "ec2_instance" {
     Name = "GrafanaServerInstance"
   }
 }
+
