@@ -2,8 +2,8 @@ name: AWS Pipeline
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
 
 jobs:
   tf-run:

@@ -10,7 +10,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "main" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "sa-east-1a"
   map_public_ip_on_launch = true
   tags = {
     Name = "MyTerraformSubnet"
@@ -101,7 +101,7 @@ data "template_file" "user_data" {
 
 # Criar a Instância EC2 com o Script de User Data
 resource "aws_instance" "ec2_instance" {
-  ami           = "ami-0e2c8caa4b6378d8c" # AMI Ubuntu 24.04
+  ami           = "ami-04d88e4b4e0a5db46" # AMI Ubuntu 24.04
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.main.id
