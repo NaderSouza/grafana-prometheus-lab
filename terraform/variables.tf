@@ -8,3 +8,4 @@ variable "key_name" {
   description = "Nome da chave SSH para acessar a instância"
   type        = string
 }
+
